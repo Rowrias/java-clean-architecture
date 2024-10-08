@@ -1,45 +1,36 @@
-package br.com.alura.codechella.model;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+package br.com.alura.codechella.domain;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "usuarios")
 public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cpf;
     private String nome;
     private LocalDate nascimento;
     private String email;
 
-    public Long getId() {
+    //Getters Setters
+    public java.lang.Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(java.lang.Long id) {
         this.id = id;
     }
 
-    public String getCpf() {
+    public java.lang.String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(java.lang.String cpf) {
         this.cpf = cpf;
     }
 
-    public String getNome() {
+    public java.lang.String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(java.lang.String nome) {
         this.nome = nome;
     }
 
@@ -51,11 +42,11 @@ public class Usuario {
         this.nascimento = nascimento;
     }
 
-    public String getEmail() {
+    public java.lang.String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(java.lang.String email) {
         this.email = email;
     }
 }
