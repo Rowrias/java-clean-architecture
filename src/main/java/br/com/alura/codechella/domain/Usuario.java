@@ -1,36 +1,44 @@
 package br.com.alura.codechella.domain;
 
+
 import java.time.LocalDate;
 
+import br.com.alura.codechella.domain.entities.usuario.Endereco;
+
 public class Usuario {
-    private Long id;
     private String cpf;
     private String nome;
     private LocalDate nascimento;
     private String email;
+    
+    private Endereco endereco;
+
+    //Constructor
+    public Usuario(String cpf, String nome, LocalDate nascimento, String email) {
+        if (cpf == null || !cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}")) {
+            throw new IllegalArgumentException("Cpf no padrão incorreto!");
+        }
+        
+        this.cpf = cpf;
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.email = email;
+    }
 
     //Getters Setters
-    public java.lang.Long getId() {
-        return id;
-    }
-
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
-
-    public java.lang.String getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(java.lang.String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public java.lang.String getNome() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(java.lang.String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -42,11 +50,19 @@ public class Usuario {
         this.nascimento = nascimento;
     }
 
-    public java.lang.String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(java.lang.String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 }
