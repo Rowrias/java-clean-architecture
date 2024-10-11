@@ -2,7 +2,7 @@ package br.com.alura.codechella.domain.entities.usuario;
 
 import java.time.LocalDate;
 
-import br.com.alura.codechella.domain.Usuario;
+import br.com.alura.codechella.domain.Endereco;
 
 public class FabricaDeUsuario {
 	

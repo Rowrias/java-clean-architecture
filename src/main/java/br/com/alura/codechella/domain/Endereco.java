@@ -1,4 +1,4 @@
-package br.com.alura.codechella.domain.entities.usuario;
+package br.com.alura.codechella.domain;
 
 public class Endereco {
 	private String cep;
