@@ -74,4 +74,18 @@ public class Usuario extends UsuarioEntity {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+
+    //To String
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", nascimento=" + nascimento +
+                ", email='" + email + '\'' +
+                ", endereco=" + endereco +
+                '}';
+    }
+
+
 }
