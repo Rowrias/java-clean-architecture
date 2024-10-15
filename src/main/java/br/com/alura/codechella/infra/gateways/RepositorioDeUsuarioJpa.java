@@ -1,6 +1,7 @@
 package br.com.alura.codechella.infra.gateways;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import br.com.alura.codechella.application.gateways.RepositorioDeUsuario;
 import br.com.alura.codechella.domain.entities.usuario.Usuario;
@@ -26,7 +27,26 @@ public class RepositorioDeUsuarioJpa implements RepositorioDeUsuario {
 
     @Override
     public List<Usuario> listarTodos() {
-        //return repositorio.findAll();
-    	return null;
+        return repositorio.findAll().stream()
+                .map(mapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public Usuario alteraUsuario(String cpf, Usuario usuario) {
+        UsuarioEntity entity = repositorio.findByCpf(cpf);
+        if (entity != null) {
+            var atualizado = mapper.toEntity(usuario);
+            atualizado.setId(entity.getId());
+            repositorio.save(atualizado);
+            return mapper.toDomain(atualizado);
+        }
+        return null;
+    }
+
+    @Override
+    public void excluiUsuario(String cpf) {
+        UsuarioEntity entity = repositorio.findByCpf(cpf);
+        repositorio.deleteById(entity.getId());
     }
 }

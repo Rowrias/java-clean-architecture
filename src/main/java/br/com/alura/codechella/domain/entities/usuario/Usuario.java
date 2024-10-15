@@ -4,8 +4,9 @@ import java.time.LocalDate;
 import java.time.Period;
 
 import br.com.alura.codechella.domain.Endereco;
+import br.com.alura.codechella.infra.persistance.UsuarioEntity;
 
-public class Usuario {
+public class Usuario extends UsuarioEntity {
     private String cpf;
     private String nome;
     private LocalDate nascimento;

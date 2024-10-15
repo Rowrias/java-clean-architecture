@@ -7,4 +7,6 @@ import br.com.alura.codechella.domain.entities.usuario.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	void save(UsuarioEntity entity);
+
+	UsuarioEntity findByCpf(String cpf);
 }

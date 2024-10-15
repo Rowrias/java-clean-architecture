@@ -5,11 +5,11 @@ import java.util.List;
 import br.com.alura.codechella.domain.entities.usuario.Usuario;
 
 public interface RepositorioDeUsuario {
-	default Usuario cadastrarUsuario(Usuario usuario) {
-		return null;
-	}
+	Usuario cadastrarUsuario(Usuario usuario);
 
-    default List<Usuario> listarTodos(){
-    	return null;
-    }
+	List<Usuario> listarTodos();
+
+	Usuario alteraUsuario(String cpf, Usuario usuario);
+
+	void excluiUsuario(String cpf);
 }
